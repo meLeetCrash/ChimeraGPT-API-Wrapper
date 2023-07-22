@@ -6,7 +6,7 @@ class Models:
 
 
 class Assistant:
-    def __init__(self, token: str, model: Models):
+    def __init__(self, token: str, model: Models = Models.GPT_4):
         self.token = token
         self.model = model
 
