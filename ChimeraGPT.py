@@ -1,3 +1,5 @@
+import traceback
+
 import requests
 
 
@@ -12,7 +14,7 @@ class Assistant:
 
     def ask(self, request: str):
         try:
-            response = requests.get(
+            response = requests.post(
                 url="https://chimeragpt.adventblocks.cc/v1/chat/completions",
                 headers={
                     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -34,4 +36,4 @@ class Assistant:
             )
             return response.json()['choices'][0]['message']['content']
         except:
-            pass
+            traceback.print_exc()
